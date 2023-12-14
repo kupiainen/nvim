@@ -17,7 +17,7 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'clangd', 'jedi_language_server', 'lua_ls'},
+  ensure_installed = {'pyright', 'lua_ls'},
   handlers = {
     lsp_zero.default_setup,
     lua_ls = function()
