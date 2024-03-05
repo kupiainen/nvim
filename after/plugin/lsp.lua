@@ -11,6 +11,12 @@ require('mason-lspconfig').setup({
       local lua_opts = lsp_zero.nvim_lua_ls()
       require('lspconfig').lua_ls.setup(lua_opts)
     end,
+    rust_analyzer = function()
+        local rust_opts = {
+            "rustup", "run", "stable", "rust_analyzer"
+        }
+        require('lspconfig').rust_analyzer.setup(rust_opts)
+    end
   }
 })
 
