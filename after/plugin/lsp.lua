@@ -16,6 +16,23 @@ require('mason-lspconfig').setup({
             "rustup", "run", "stable", "rust_analyzer"
         }
         require('lspconfig').rust_analyzer.setup(rust_opts)
+    end,
+    pyright = function ()
+        local python_opts = {
+            cmd = { "pyright-langserver", "--stdio" },
+            root_dir = vim.fs.dirname(vim.fs.find({'setup.py', '.git'}, { upward = true })[1]),
+            filetypes = {"python"},
+            settings={
+                python = {
+                    analysis = {
+                        autoSearchPaths = true,
+                        diagnosticMode = "openFilesOnly",
+                        useLibraryCodeForTypes = true
+                    }
+                }
+            }
+        }
+        require('lspconfig').pyright.setup({python_opts})
     end
   }
 })
