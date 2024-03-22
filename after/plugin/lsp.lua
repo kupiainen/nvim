@@ -1,4 +1,17 @@
 local lsp_zero = require('lsp-zero')
+local util = require('lspconfig.util')
+local root_files = {
+    -- Single-module projects
+    {
+        'build.xml', -- Ant
+        '.git',--git line added by myself 
+        'pom.xml', -- Maven
+        'settings.gradle', -- Gradle
+        'settings.gradle.kts', -- Gradle
+    },
+    -- Multi-module projects
+    { 'build.gradle', 'build.gradle.kts' },
+}
 
 lsp_zero.preset("recommended")
 
@@ -25,6 +38,14 @@ require('mason-lspconfig').setup({
                 jvm_args = {},
                 workspace = vim.fn.expand("~/.cache/jdtls/workspace")
             },
+            root_dir = function(fname)
+                for _, patterns in ipairs(root_files) do
+                    local root = util.root_pattern(unpack(patterns))(fname)
+                    if root then
+                        return root
+                    end
+                end
+            end,
             single_file_support = {true}
         }
         require('lspconfig').jdtls.setup(jdtls_opts)
