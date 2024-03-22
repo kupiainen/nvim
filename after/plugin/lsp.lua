@@ -17,6 +17,18 @@ require('mason-lspconfig').setup({
         }
         require('lspconfig').rust_analyzer.setup(rust_opts)
     end,
+    jdtls = function()
+        local jdtls_opts = {
+            cmd = { vim.fn.expand("~/.local/share/nvim/mason/bin/jdtls") },
+            filetypes = {"java"},
+            init_options = {
+                jvm_args = {},
+                workspace = vim.fn.expand("~/.cache/jdtls/workspace")
+            },
+            single_file_support = {true}
+        }
+        require('lspconfig').jdtls.setup(jdtls_opts)
+    end,
     pyright = function ()
         local python_opts = {
             cmd = { "pyright-langserver", "--stdio" },
