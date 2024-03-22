@@ -8,3 +8,6 @@
 -- 
 -- }
 -- require('jdtls').start_or_attach(config)
+--
+-- more info about new lsp-zero config:
+-- https://gist.github.com/slinky07/e5a4cd5b399f48227e658261160fe20c
