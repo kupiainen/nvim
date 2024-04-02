@@ -26,7 +26,16 @@ require('mason-lspconfig').setup({
     end,
     rust_analyzer = function()
         local rust_opts = {
-            "rustup", "run", "stable", "rust_analyzer"
+            cmd = {
+                "rustup", "run", "stable", "rust-analyzer"
+            },
+            filetypes = {"rust"},
+            root_dir = util.root_pattern("Cargo.toml"),
+            settings = {
+                cargo = {
+                    allFeatures = true,
+                },
+            },
         }
         require('lspconfig').rust_analyzer.setup(rust_opts)
     end,
