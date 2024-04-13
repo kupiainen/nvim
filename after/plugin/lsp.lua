@@ -31,6 +31,7 @@ require('mason-lspconfig').setup({
             },
             filetypes = {"rust"},
             root_dir = util.root_pattern("Cargo.toml"),
+            single_file_support = true,
             settings = {
                 cargo = {
                     allFeatures = true,
