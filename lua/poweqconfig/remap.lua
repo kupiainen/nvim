@@ -16,3 +16,4 @@ vim.keymap.set("v", "<Leader>'","c'<C-r>-'<Esc>")
 
 vim.keymap.set("i", "§", "<")
 vim.keymap.set("i", "½", ">")
+vim.keymap.set("i", "ə", "|")
