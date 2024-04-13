@@ -25,6 +25,8 @@ require('mason-lspconfig').setup({
       require('lspconfig').lua_ls.setup(lua_opts)
     end,
     rust_analyzer = function()
+        -- inliay hints vim default lsp
+        -- :lua vim.lsp.inlay_hint.enable(0,true)
         local rust_opts = {
             cmd = {
                 "rustup", "run", "stable", "rust-analyzer"
