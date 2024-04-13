@@ -2,9 +2,9 @@ vim.g.mapleader = " "
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
--- Automatically stays centered in update 0.10.0-dev
--- vim.keymap.set("n", "<C-d>", "<C-d>")
--- vim.keymap.set("n", "<C-u>", "<C-u>")
+-- Breaking change in update 0.10.0-dev
+-- vim.keymap.set("n", "<C-d>", "<C-d>zz")
+-- vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
