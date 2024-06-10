@@ -24,6 +24,16 @@ require('mason-lspconfig').setup({
       local lua_opts = lsp_zero.nvim_lua_ls()
       require('lspconfig').lua_ls.setup(lua_opts)
     end,
+    clangd = function()
+        local clangd_opts = {
+            cmd = { "clangd" },
+            filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda', 'proto' },
+            single_file_support = true,
+            capabilities = {
+                offsetEncoding = 'utf-8' },
+        }
+        require('lspconfig').clangd.setup(clangd_opts)
+    end,
     rust_analyzer = function()
         -- inliay hints vim default lsp
         -- :lua vim.lsp.inlay_hint.enable(0,true)
