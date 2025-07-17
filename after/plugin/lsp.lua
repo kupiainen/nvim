@@ -17,7 +17,7 @@ lsp_zero.preset("recommended")
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {"rust_analyzer", "clangd", "pyright", "jdtls", "lua_ls"},
+  ensure_installed = {"rust_analyzer", "clangd", "pyright", "jdtls", "lua_ls", "ts_ls"},
   handlers = {
     lsp_zero.default_setup,
     lua_ls = function()
