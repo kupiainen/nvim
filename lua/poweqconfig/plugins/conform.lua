@@ -14,6 +14,13 @@ return {
 			-- rust = { "rustfmt", lsp_format = "fallback" },
 			-- Conform will run the first available formatter
 			-- javascript = { "prettierd", "prettier", stop_after_first = true },
+			tex = { "latexindent" },
+			bib = { "bibtex-tidy" },
+		},
+		formatters = {
+			["bibtex-tidy"] = {
+				prepend_args = { "--sort=author,year", "--curly", "--duplicates" },
+			},
 		},
 		-- format_on_save = {
 		--     -- These options will be passed to conform.format()
