@@ -19,6 +19,5 @@ vim.keymap.set("i", "§", "<")
 vim.keymap.set("i", "½", ">")
 vim.keymap.set("i", "ə", "|")
 
-
 -- copy to system clipboard !!MUST HAVE 'xclip' or equivalent!!
 vim.keymap.set('v', '<leader>y', '"+y')
