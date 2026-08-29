@@ -1,6 +1,7 @@
 local parsers = {
     "bash",
     "diff",
+    "gitcommit",
     "javascript",
     "python",
     "rust",
